@@ -3,7 +3,8 @@
 ->it reduces time complexit from O(n2) to O(n).
 --->[If array is sorted → Two Pointers is my FIRST thought]
 ->applying condition based on problem description
-
+->we can start both pointers from starting of a array
+->we put one pointer at start and another at end of the array
 
 COMMOM TEMPLATE FOR TWO POINTERS FOR CONTION CHECKING
 int start=0,end=n-1;
@@ -18,3 +19,24 @@ while(start<end){
         end--;
     }
 }
+
+
+🧠 ONE-LINE MEMORY RULE
+Sorted + pair / compare from ends
+→ Two Pointers
+
+>two sum problem<
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int>mp;
+        for(int i=0;i<nums.size();i++){
+            int rem=target-nums[i];
+            if(mp.count(rem)){
+                return {mp[rem],i};
+            }
+            mp[nums[i]]=i;
+        }
+        return {};
+    }
+};
