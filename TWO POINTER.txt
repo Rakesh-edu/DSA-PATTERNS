@@ -1,0 +1,20 @@
+************TWO POINTERS************
+->Two pointer is mainly used to avoid checking all pairs.
+->it reduces time complexit from O(n2) to O(n).
+--->[If array is sorted → Two Pointers is my FIRST thought]
+->applying condition based on problem description
+
+
+COMMOM TEMPLATE FOR TWO POINTERS FOR CONTION CHECKING
+int start=0,end=n-1;
+while(start<end){
+    if(condition==true){
+        //returning true or making changes like increment/decrement
+    }
+    else if(<condition){
+        start++;
+    }
+    else {
+        end--;
+    }
+}
