@@ -1,0 +1,32 @@
+//PREFIX sum
+1. Add current number to sum
+2. Check if (sum - k) existed before
+3. Store current sum
+
+//basic problem
+int n=nums.size();
+        vector<int>ans(n);
+        ans[0]=nums[0];
+        for(int i=1;i<n;i++){
+            ans[i]=ans[i-1]+nums[i];
+        }
+        return ans;
+
+        
+//BASIC TEMPLATE
+unordered_map<int,int> mp;
+mp[0] = 1;
+
+int sum = 0;
+int count = 0;
+
+for(int i = 0; i < n; i++) {
+    sum += arr[i];
+
+    if(mp.find(sum - k) != mp.end()) {
+        count++;
+    }
+
+    mp[sum]++;
+}
+
