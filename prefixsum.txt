@@ -44,3 +44,5 @@ int subarraySum(vector<int>& nums, int k) {
         }
         return count;
     }
+
+    //solved today two leetcode questions from leetcode contest
