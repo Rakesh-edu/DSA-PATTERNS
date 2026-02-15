@@ -1,0 +1,3 @@
+on day-4 solved two leetcode contest problems;
+1.basic problem on array ans string combination
+2.a concpet of how to store frequency of frequency
