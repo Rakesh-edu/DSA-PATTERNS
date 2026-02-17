@@ -43,6 +43,15 @@ int subarraySum(vector<int>& nums, int k) {
             mp[sum]++;
         }
         return count;
+        
     }
 
     //solved today two leetcode questions from leetcode contest
+    increment
+    Master Trick
+
+There are only 3 major prefix sum hashmap patterns:
+
+1️⃣ Count subarrays → store frequency
+2️⃣ Longest subarray → store first index
+3️⃣ Modulo problems → store remainder
