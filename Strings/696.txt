@@ -1,0 +1,2 @@
+solved a problem no 696 in leetcode approached a brute force technique with time complextiy of O(n2)
+    Got errors while solving brute force method
