@@ -1,0 +1,10 @@
+it is a basic problem on finding max prod of 3 numbers in the array.
+1.the approach is to get  prod of last 3 numbers 
+2.arr[0]*arr[2]*arr[n]
+    becaue 2 negative number and last postive can give max product
+    so the logic should be:
+    int maximumProduct(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size()-1;
+        return max(nums[n]*nums[n-1]*nums[n-2],nums[0]*nums[1]*nums[n]);
+    }
