@@ -1,22 +1,32 @@
-solved a problem no 696 in leetcode approached a brute force technique with time complextiy of O(n2)
-    Got errors while solving brute force method
-    my approach:
-                        class Solution {
-                        public:
-                            int countBinarySubstrings(string s) {
-                                int ans=0;
-                                for(int i=0;i<s.size();i++){
-                                    int count=0;
-                                    for(int j=i;j<s.size();j++){
-                                        if(s[j]=='0')count++;
-                                        else count--;
+brute force:checking over each and every substring and looking to hit the condition,which may take O(n2) time.
+Optimized:
+->we check length of every consecutive group of substring.
+->we take the min(countof0s,countof1s) and add it answer every time
 
-                                        if(count==0){
-                                            ans++;break;
-                                        }
-                                    }
-                                    
-                                }
-                                return ans;
-                            }
-                        };
+example:
+s="00111"
+    count0=2
+    count1=3;
+    no.of groups=min(count0,count1)=>min(2,3)
+
+the substring should be either "0011" or "01"
+
+code:
+int countBinarySubstrings(string s) {
+        int curr = 1;
+        int prev = 0;
+        int ans = 0;
+
+        for(int i = 1; i < s.size(); i++) {
+            if(s[i] == s[i-1]) {
+                curr++;
+            }
+            else {
+                ans += min(prev, curr);
+                prev = curr;
+                curr = 1;
+            }
+        }
+
+        ans += min(prev, curr);
+        return ans;
