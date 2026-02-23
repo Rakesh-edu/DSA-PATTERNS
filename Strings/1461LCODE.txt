@@ -1,0 +1,16 @@
+->solved a medium level problem in string which is like binary substring.
+->solved in a time complexity of O(n*k).
+->i learnt new thing how to add substring in a structure
+    string str=s.substr(i,k);
+    st.insert(str);
+
+->CODE:
+        int n=s.size();
+        unordered_set<string>st;
+        for(int i=0;i<=n-k;i++){
+            string str=s.substr(i,k);
+            st.insert(str);
+        }
+        if(st.size()==pow(2,k)) return true;
+
+        return false;
